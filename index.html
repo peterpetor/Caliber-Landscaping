@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caliber Landscaping & Tree Care | Premium Services in Osceola County</title>
+    <meta name="description" content="Award-winning tree and landscaping services in Saint Cloud, FL. Voted Best of Osceola 2025. Expert tree removal, landscaping, and irrigation by Joey and team.">
+    
+    <!-- Google Fonts for Luxury Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        caliber: {
+                            dark: '#0a100d',    // Deep, almost black green
+                            forest: '#11221a',  // Rich dark green
+                            gold: '#d4af37',    // Luxury gold
+                            goldhover: '#b5952f',
+                            light: '#f4f4f4'
+                        }
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "linear-gradient(to bottom, rgba(10, 16, 13, 0.6), rgba(10, 16, 13, 0.95)), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')",
+                        'wood-pattern': "linear-gradient(to right, rgba(17, 34, 26, 0.95), rgba(10, 16, 13, 0.98)), url('https://images.unsplash.com/photo-1515446134809-993c501ca304?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for a premium feel */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a100d;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d4af37;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b5952f;
+        }
+        .text-glow {
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+        .glass-panel {
+            background: rgba(17, 34, 26, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-caliber-dark text-caliber-light font-sans antialiased selection:bg-caliber-gold selection:text-caliber-dark overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="glass-panel w-full border-b border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-20">
+                    <!-- Logo -->
+                    <div class="flex-shrink-0 flex items-center gap-3">
+                        <i class="fa-solid fa-tree text-caliber-gold text-3xl"></i>
+                        <div class="flex flex-col">
+                            <span class="font-serif font-bold text-2xl tracking-wider text-white leading-none">CALIBER</span>
+                            <span class="text-[0.65rem] uppercase tracking-[0.2em] text-caliber-gold">Landscaping & Tree Care</span>
+                        </div>
+                    </div>
+
+                    <!-- Desktop Menu -->
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="#services" class="text-sm uppercase tracking-widest text-gray-300 hover:text-caliber-gold transition-colors">Services</a>
+                        <a href="#reviews" class="text-sm uppercase tracking-widest text-gray-300 hover:text-caliber-gold transition-colors">Reviews</a>
+                        <a href="#about" class="text-sm uppercase tracking-widest text-gray-300 hover:text-caliber-gold transition-colors">About</a>
+                        <a href="tel:+14074318120" class="group flex items-center gap-2 bg-caliber-gold hover:bg-caliber-goldhover text-caliber-dark px-6 py-2.5 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-[0_0_15px_rgba(212,175,55,0.3)]">
+                            <i class="fa-solid fa-phone"></i>
+                            (407) 431-8120
+                        </a>
+                    </div>
+
+                    <!-- Mobile menu button -->
+                    <div class="md:hidden flex items-center">
+                        <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                            <i class="fa-solid fa-bars text-2xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-panel border-b border-white/10 absolute w-full">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+                <a href="#services" class="block px-3 py-4 text-base font-medium uppercase tracking-wider text-gray-300 hover:text-caliber-gold border-b border-white/5">Services</a>
+                <a href="#reviews" class="block px-3 py-4 text-base font-medium uppercase tracking-wider text-gray-300 hover:text-caliber-gold border-b border-white/5">Reviews</a>
+                <a href="#about" class="block px-3 py-4 text-base font-medium uppercase tracking-wider text-gray-300 hover:text-caliber-gold border-b border-white/5">About</a>
+                <a href="tel:+14074318120" class="block px-3 py-4 text-lg font-bold text-caliber-gold">
+                    <i class="fa-solid fa-phone mr-2"></i> (407) 431-8120
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center bg-hero-pattern bg-cover bg-center bg-no-repeat bg-fixed pt-20">
+        <div class="absolute inset-0 bg-gradient-to-t from-caliber-dark via-transparent to-transparent z-0"></div>
+        
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto flex flex-col items-center">
+            
+            <!-- Awards Badge (Above Headline) -->
+            <div class="inline-flex items-center gap-3 bg-caliber-forest/80 backdrop-blur-md border border-caliber-gold/30 rounded-full px-6 py-2 mb-8 animate-fade-in-up">
+                <i class="fa-solid fa-trophy text-caliber-gold"></i>
+                <span class="text-sm md:text-base font-medium tracking-wide">Voted Best of Osceola 2025</span>
+                <i class="fa-solid fa-star text-caliber-gold text-xs"></i>
+            </div>
+
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight drop-shadow-2xl">
+                Mastery in <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-caliber-gold to-yellow-200 text-glow">Every Branch.</span>
+            </h1>
+            
+            <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+                Premium tree care, precision landscaping, and smart irrigation for Osceola County's most distinguished properties. 
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-5 justify-center w-full sm:w-auto">
+                <a href="tel:+14074318120" class="bg-caliber-gold hover:bg-caliber-goldhover text-caliber-dark px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:-translate-y-1 shadow-[0_10px_30px_rgba(212,175,55,0.4)] flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-phone-volume"></i> Call for Free Estimate
+                </a>
+                <a href="#services" class="bg-transparent border border-white/30 hover:border-caliber-gold hover:text-caliber-gold text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 backdrop-blur-sm flex items-center justify-center">
+                    Explore Services
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#awards" class="text-white/50 hover:text-caliber-gold transition-colors">
+                <i class="fa-solid fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Trust / Awards Banner -->
+    <section id="awards" class="bg-caliber-forest border-y border-white/5 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-white/10">
+                <div class="p-4">
+                    <h3 class="font-serif text-3xl text-caliber-gold mb-2">2025</h3>
+                    <p class="text-sm uppercase tracking-widest text-gray-400">Best Tree Service<br>Osceola County</p>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-serif text-3xl text-caliber-gold mb-2">2025</h3>
+                    <p class="text-sm uppercase tracking-widest text-gray-400">Best Landscaping Service<br>Osceola County</p>
+                </div>
+                <div class="p-4 flex flex-col justify-center items-center">
+                    <div class="flex gap-1 text-caliber-gold mb-2 text-xl">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-sm uppercase tracking-widest text-gray-400">100% Recommended<br>on Facebook</p>
+                </div>
+            </div>
+            <div class="mt-8 text-center">
+                <p class="text-xs tracking-[0.3em] uppercase text-gray-500">Licensed • Insured • Locally Owned & Operated in Saint Cloud, FL</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-caliber-dark relative">
+        <!-- Decorative background element -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-caliber-gold/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-20">
+                <h2 class="text-sm font-bold tracking-[0.2em] text-caliber-gold uppercase mb-3">Our Expertise</h2>
+                <h3 class="font-serif text-4xl md:text-5xl text-white">Elevating the Standard</h3>
+                <div class="w-24 h-1 bg-caliber-gold mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1: Tree Care -->
+                <div class="group relative overflow-hidden rounded-2xl bg-caliber-forest border border-white/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)]">
+                    <div class="h-64 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500 z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Professional Tree Removal" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute top-4 right-4 z-20 bg-caliber-dark/80 backdrop-blur p-3 rounded-full text-caliber-gold">
+                            <i class="fa-solid fa-tree text-xl w-6 h-6 flex items-center justify-center"></i>
+                        </div>
+                    </div>
+                    <div class="p-8 relative z-20 bg-gradient-to-t from-caliber-forest to-transparent -mt-10">
+                        <h4 class="font-serif text-2xl text-white mb-3">Tree Services</h4>
+                        <p class="text-gray-400 mb-6 font-light leading-relaxed">Dangerous removals, precision dropping, canopy trimming, and stump grinding handled with absolute safety and expertise.</p>
+                        <ul class="text-sm text-gray-300 space-y-2 mb-6">
+                            <li><i class="fa-solid fa-check text-caliber-gold mr-2"></i> Huge oak & palm specialists</li>
+                            <li><i class="fa-solid fa-check text-caliber-gold mr-2"></i> Precision targeting</li>
+                            <li><i class="fa-solid fa-check text-caliber-gold mr-2"></i> Impeccable clean-up</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 2: Landscaping -->
+                <div class="group relative overflow-hidden rounded-2xl bg-caliber-forest border border-white/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)]">
+                    <div class="h-64 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500 z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1734079692079-aae7e24a7035?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Luxury Landscaping" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute top-4 right-4 z-20 bg-caliber-dark/80 backdrop-blur p-3 rounded-full text-caliber-gold">
+                            <i class="fa-solid fa-leaf text-xl w-6 h-6 flex items-center justify-center"></i>
+                        </div>
+                    </div>
+                    <div class="p-8 relative z-20 bg-gradient-to-t from-caliber-forest to-transparent -mt-10">
+                        <h4 class="font-serif text-2xl text-white mb-3">Landscaping</h4>
+                        <p class="text-gray-400 mb-6 font-light leading-relaxed">Bespoke design, installation, and maintenance to transform your outdoor space into a luxurious, private retreat.</p>
+                        <ul class="text-sm text-gray-300 space-y-2 mb-6">
+                            <li><i class="fa-solid fa-check text-caliber-gold mr-2"></i> Custom estate design</li>
+                            <li><i class="fa-solid fa-check text-caliber-gold mr-2"></i> Sod & mulch installation</li>
+                            <li><i class="fa-solid fa-check text-caliber-gold mr-2"></i> Premium plant selection</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 3: Irrigation -->
+                <div class="group relative overflow-hidden rounded-2xl bg-caliber-forest border border-white/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)]">
+                    <div class="h-64 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500 z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Irrigation Systems" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute top-4 right-4 z-20 bg-caliber-dark/80 backdrop-blur p-3 rounded-full text-caliber-gold">
+                            <i class="fa-solid fa-droplet text-xl w-6 h-6 flex items-center justify-center"></i>
+                        </div>
+                    </div>
+                    <div class="p-8 relative z-20 bg-gradient-to-t from-caliber-forest to-transparent -mt-10">
+                        <h4 class="font-serif text-2xl text-white mb-3">Irrigation</h4>
+                        <p class="text-gray-400 mb-6 font-light leading-relaxed">Smart water management systems designed to keep your landscape lush while optimizing water conservation and reducing costs.</p>
+                        <ul class="text-sm text-gray-300 space-y-2 mb-6">
+                            <li><i class="fa-solid fa-check text-caliber-gold mr-2"></i> System installation & repair</li>
+                            <li><i class="fa-solid fa-check text-caliber-gold mr-2"></i> Smart controller upgrades</li>
+                            <li><i class="fa-solid fa-check text-caliber-gold mr-2"></i> Coverage optimization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof / Reviews Section -->
+    <section id="reviews" class="py-24 bg-wood-pattern bg-cover bg-center bg-fixed relative border-y border-caliber-gold/20">
+        <div class="absolute inset-0 bg-caliber-dark/80 backdrop-blur-[2px]"></div>
+        
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <i class="fa-brands fa-facebook text-4xl text-[#1877F2] mb-4 bg-white rounded-full leading-none"></i>
+                <h2 class="font-serif text-4xl md:text-5xl text-white mb-4">100% Recommended</h2>
+                <p class="text-caliber-gold uppercase tracking-widest text-sm">Don't just take our word for it</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Review 1 -->
+                <div class="glass-panel p-10 rounded-2xl relative">
+                    <i class="fa-solid fa-quote-left text-4xl text-caliber-gold/20 absolute top-6 left-6"></i>
+                    <div class="flex items-center gap-1 text-caliber-gold mb-6 relative z-10">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 text-lg leading-relaxed mb-8 italic relative z-10">
+                        "Awesome service, took down our huge oak tree in no time and made it look so easy, even tho it really is a dangerous and difficult job. Landed exactly where he said it would. Highly recommended very knowledgable and professional."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-caliber-forest flex items-center justify-center border border-caliber-gold/50 text-white font-bold">KS</div>
+                        <div>
+                            <h5 class="text-white font-bold">Kc Cowan Smith</h5>
+                            <span class="text-xs text-gray-500 uppercase tracking-wider">Facebook Review</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="glass-panel p-10 rounded-2xl relative">
+                    <i class="fa-solid fa-quote-left text-4xl text-caliber-gold/20 absolute top-6 left-6"></i>
+                    <div class="flex items-center gap-1 text-caliber-gold mb-6 relative z-10">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 text-lg leading-relaxed mb-8 italic relative z-10">
+                        "Joey did a great job with my three tall cabbage palms. Great communication and clean up was excellent. Super pricing too."
+                    </p>
+                    <div class="flex items-center gap-4 mt-auto">
+                        <div class="w-12 h-12 rounded-full bg-caliber-forest flex items-center justify-center border border-caliber-gold/50 text-white font-bold">GS</div>
+                        <div>
+                            <h5 class="text-white font-bold">Gina Sumpter</h5>
+                            <span class="text-xs text-gray-500 uppercase tracking-wider">Facebook Review</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                 <a href="https://www.facebook.com/p/Caliber-Landscaping-Tree-Care-LLC-100063463575463/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors border-b border-gray-600 hover:border-white pb-1">
+                    Read more reviews on our Facebook Page <i class="fa-solid fa-arrow-right text-sm"></i>
+                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Why Us CTA -->
+    <section id="about" class="py-20 bg-caliber-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-caliber-forest rounded-3xl p-8 md:p-16 border border-white/5 flex flex-col lg:flex-row items-center gap-12 relative overflow-hidden">
+                <!-- Background decoration -->
+                <div class="absolute top-0 right-0 p-32 opacity-5 pointer-events-none">
+                    <i class="fa-solid fa-tree text-9xl"></i>
+                </div>
+
+                <div class="lg:w-1/2 relative z-10">
+                    <h2 class="text-sm font-bold tracking-[0.2em] text-caliber-gold uppercase mb-3">About Us</h2>
+                    <h3 class="font-serif text-3xl md:text-4xl text-white mb-6">Locally Owned.<br>Professionally Executed.</h3>
+                    <p class="text-gray-400 mb-6 font-light leading-relaxed">
+                        Based right here in Saint Cloud, FL, Joey and the Caliber team have built a reputation on two things: doing dangerous jobs safely, and leaving properties cleaner than we found them.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-gray-300">
+                            <div class="w-10 h-10 rounded-full bg-caliber-dark flex items-center justify-center text-caliber-gold mr-4 border border-white/5">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            Fully Licensed & Insured
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <div class="w-10 h-10 rounded-full bg-caliber-dark flex items-center justify-center text-caliber-gold mr-4 border border-white/5">
+                                <i class="fa-solid fa-bullseye"></i>
+                            </div>
+                            Precision Tree Dropping
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <div class="w-10 h-10 rounded-full bg-caliber-dark flex items-center justify-center text-caliber-gold mr-4 border border-white/5">
+                                <i class="fa-solid fa-broom"></i>
+                            </div>
+                            Impeccable Cleanup
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="lg:w-1/2 w-full relative z-10">
+                    <div class="glass-panel p-8 rounded-2xl">
+                        <h4 class="font-serif text-2xl text-white mb-2">Get Your Free Estimate</h4>
+                        <p class="text-gray-400 text-sm mb-6">Fast response, super pricing.</p>
+                        
+                        <form action="mailto:joeylyonnais99@gmail.com" method="post" enctype="text/plain" class="space-y-4">
+                            <div>
+                                <input type="text" placeholder="Your Name" class="w-full bg-caliber-dark border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-caliber-gold transition-colors" required>
+                            </div>
+                            <div>
+                                <input type="tel" placeholder="Phone Number" class="w-full bg-caliber-dark border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-caliber-gold transition-colors" required>
+                            </div>
+                            <div>
+                                <select class="w-full bg-caliber-dark border border-white/10 rounded-lg px-4 py-3 text-gray-400 focus:outline-none focus:border-caliber-gold transition-colors appearance-none">
+                                    <option value="">Select Service Needed</option>
+                                    <option value="Tree Removal">Tree Removal / Trimming</option>
+                                    <option value="Landscaping">Landscaping Design/Maintenance</option>
+                                    <option value="Irrigation">Irrigation System</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="w-full bg-caliber-gold hover:bg-caliber-goldhover text-caliber-dark font-bold py-4 rounded-lg transition-all duration-300 mt-2">
+                                Request Estimate Now
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black pt-20 pb-10 border-t border-white/5 relative overflow-hidden">
+        <!-- Giant background text -->
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[15vw] font-serif font-bold text-white/[0.02] whitespace-nowrap pointer-events-none select-none z-0">
+            CALIBER
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Brand col -->
+                <div class="col-span-1 lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-6">
+                        <i class="fa-solid fa-tree text-caliber-gold text-4xl"></i>
+                        <div class="flex flex-col">
+                            <span class="font-serif font-bold text-3xl tracking-wider text-white leading-none">CALIBER</span>
+                            <span class="text-xs uppercase tracking-[0.2em] text-caliber-gold">Landscaping & Tree Care</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-6 max-w-sm font-light">
+                        Elevating properties across Osceola County with award-winning tree care, intelligent landscaping, and dedicated service.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://www.facebook.com/p/Caliber-Landscaping-Tree-Care-LLC-100063463575463/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-[#1877F2] hover:text-white transition-all duration-300">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-white font-serif text-xl mb-6 border-b border-white/10 pb-2 inline-block">Contact</h4>
+                    <ul class="space-y-4 text-gray-400">
+                        <li>
+                            <a href="tel:+14074318120" class="hover:text-caliber-gold transition-colors flex items-center gap-3">
+                                <i class="fa-solid fa-phone text-caliber-gold"></i> (407) 431-8120
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:joeylyonnais99@gmail.com" class="hover:text-caliber-gold transition-colors flex items-center gap-3">
+                                <i class="fa-solid fa-envelope text-caliber-gold"></i> Email Us
+                            </a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-location-dot text-caliber-gold"></i> Saint Cloud, FL<br>Osceola County
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Operating Status -->
+                <div>
+                    <h4 class="text-white font-serif text-xl mb-6 border-b border-white/10 pb-2 inline-block">Company</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-caliber-gold text-xs"></i> Fully Licensed</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-caliber-gold text-xs"></i> Fully Insured</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-caliber-gold text-xs"></i> Locally Owned</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-caliber-gold text-xs"></i> Free Estimates</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-sm">
+                    &copy; 2026 Caliber Landscaping & Tree Care LLC. All rights reserved.
+                </p>
+                <div class="flex items-center gap-2">
+                    <span class="text-xs uppercase tracking-widest text-gray-500">Voted Best of Osceola</span>
+                    <i class="fa-solid fa-trophy text-caliber-gold text-sm"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-caliber-dark/95', 'backdrop-blur-md', 'shadow-lg');
+                navbar.classList.remove('bg-transparent');
+            } else {
+                navbar.classList.remove('bg-caliber-dark/95', 'backdrop-blur-md', 'shadow-lg');
+                navbar.classList.add('bg-transparent');
+            }
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
